@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AI Voxel Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <canvas id="bg"></canvas>
+        <div id="ui-panel">
+            <h1>AI Voxel Editor</h1>
+            <div class="ui-section">
+                <label for="texture-prompt">Texture Prompt</label>
+                <input type="text" id="texture-prompt" placeholder="e.g., lava, grass, alien skin">
+                <button id="generate-texture-btn">Generate Texture</button>
+                <div id="loader" class="hidden"></div>
+            </div>
+            <div class="ui-section">
+                <h2>Texture Palette</h2>
+                <div id="texture-palette">
+                    <!-- Textures will be added here -->
+                </div>
+            </div>
+            <div class="ui-section">
+                <h2>Save / Load</h2>
+                <div id="save-section">
+                    <input type="text" id="save-name-input" placeholder="World Name">
+                    <button id="save-btn">Save World</button>
+                </div>
+                <div id="load-menu">
+                    <div id="load-menu-content">
+                         <!-- Content will be populated by UIManager -->
+                    </div>
+                </div>
+            </div>
+             <div class="ui-section">
+                <h2>Controls</h2>
+                <p><strong>Place Block:</strong> Tap / Left Click</p>
+                <p><strong>Remove Block:</strong> Shift + Left Click</p>
+                <p><strong>Rotate:</strong> Drag / Right-Click Drag</p>
+                <p><strong>Zoom:</strong> Pinch / Scroll</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-container" class="hidden">
+        <div id="modal-content">
+            <p id="modal-text"></p>
+            <div id="modal-buttons"></div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://esm.sh/three",
+                "three/addons/": "https://esm.sh/three/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
